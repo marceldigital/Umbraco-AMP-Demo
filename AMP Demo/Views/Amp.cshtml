@@ -1,0 +1,8 @@
+﻿
+@inherits UmbracoTemplatePage
+@*
+    Redirects back to the canonical version
+*@
+@{
+    Response.Redirect(Model.Content.Url);
+}
