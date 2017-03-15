@@ -1,0 +1,43 @@
+﻿.page-nav h2 a, .page-nav h2 {
+    color: #BF360C; /* primary-dark */
+    text-decoration: none;
+}
+
+.page-nav h2 a:hover, .page-nav h2 a:focus 
+{
+    text-decoration: underline;
+}
+
+.btn {
+    border-bottom: 0.3em solid rgba(0,0,0,0.2);
+    margin-bottom: 0.4em;
+}
+
+.btn-primary {
+    background-color: #1565C0;
+}
+
+.contact-list .glyphicon {
+    padding-right: 0.3em;
+
+}
+
+.pageContent h2, .pageContent h3 {
+    /* border-bottom: 1px solid #eee; */
+}
+
+.pageContent img {
+    max-width: 100%;
+    margin-bottom: 1em;
+}
+
+.core-content img {
+    box-shadow: rgba(0,0,0,0.2) 0 3px 3px;   
+}
+
+legend { 
+    font-family: 'Ubuntu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 24px; 
+    border-bottom: none;
+}

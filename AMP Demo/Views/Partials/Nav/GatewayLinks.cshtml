@@ -1,0 +1,87 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{ 
+
+    int mainCount;
+    if (ViewData["mainCount"] == null
+        || !int.TryParse(ViewData["mainCount"].ToString(), out mainCount)
+        || mainCount == 0 )
+    {
+        mainCount = 6;
+    }
+
+    string mainHeading = (string)ViewData["mainHeading"] ?? Umbraco.GetDictionaryValue("Gateway.Main");
+    string moreHeading = (string)ViewData["moreHeading"] ?? Umbraco.GetDictionaryValue("Gateway.More");
+
+    var selection = Model.Content.Children(
+    x => x.IsVisible() &&
+    !x.HasProperty("isComponent") &&
+    x.DocumentTypeAlias != "sectionHomepage"
+);
+}
+
+@if (selection.Any())
+{
+    <div class="gateway-links">
+
+        @DisplayHeading(mainHeading)
+
+        <div class="row">
+            @foreach (var item in selection.Take(mainCount))
+            {
+                if (!item.IsFirst())
+                {
+                    if (item.IsModZero(2))
+                    {
+                        <div class="clearfix visible-sm-block"></div>
+                    }
+
+                    if (item.IsModZero(3))
+                    {
+                        <div class="clearfix visible-md-block visible-lg-block"></div>
+                    }
+                }
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="gateway-item">
+                        <h3><a href="@item.Url">@item.GetPropertyValue("title", item.Name)</a></h3>
+                        <span>
+                            @item.GetPropertyValue("summary")
+                        </span>
+                    </div>
+                </div>
+
+            }
+        </div>
+
+        @if (selection.Count() > mainCount)
+        {
+            @DisplayHeading(moreHeading)
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="nav nav-pills gateway-more">
+                        @foreach(var item in selection.Skip(mainCount))
+                        {
+                            <li>
+                                <a href="@item.Url">@item.GetPropertyValue("title", item.Name)</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@helper DisplayHeading(string heading)
+{
+    if (!string.IsNullOrWhiteSpace(heading))
+    {
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>@heading</h3>
+                </div>
+            </div>
+    }
+}

@@ -1,0 +1,54 @@
+﻿/*
+    Stylesheet for help section, just changes some of the accent colours
+    to show how you can change styles for sections 
+
+    Base:  #388E3C (Green 700)
+    Dark:  #1B5E20 (Green 900)
+    Light: #81C784 (Green 300)
+*/
+
+.navbar-default {
+    /* border-color: #1B5E20;*/
+}
+
+.intro {
+    background-color: #388E3C; 
+    color: #fff;
+}
+
+.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.active>a:focus, 
+.navbar-default .navbar-nav>.active>a:hover
+{
+    /* background-color: #1B5E20; */
+}
+
+.highlights {
+    background-color: #1B5E20;
+}
+
+.highlights h3 {
+    border-color: #388E3C;
+}
+
+a {
+    color: #388E3C;
+}
+
+a:hover, a:focus {
+    color: #1B5E20;
+}
+
+.page-nav h2 a, .page-nav h2 {
+    color: #1B5E20;
+}
+
+.pageContent h2, .pageContent h3 {
+    color: #1B5E20;
+}
+
+.atoz-footer {
+    background-color: #1B5E20;  
+}
+
+.atoz-footer li a, .atoz-footer li.active a { color: #ececec; }

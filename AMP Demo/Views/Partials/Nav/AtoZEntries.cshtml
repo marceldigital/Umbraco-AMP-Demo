@@ -1,0 +1,29 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using LGStarterKit.AtoZ
+@{ 
+    var queryLetter = Request.QueryString["letter"];
+    if (!string.IsNullOrWhiteSpace(queryLetter))
+    {
+        var letter = queryLetter.Substring(0, 1);
+        
+        <h2>@letter</h2>
+
+        var entries = Umbraco.GetAtoZEntries(letter);
+
+        if (entries.Any())
+        {
+            <ul class="atoz-entries">
+                @foreach(var entry in entries)
+                {
+                    <li>
+                        <a href="@entry.Value.url">@entry.Key</a>
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <div class="alert alert-warning">No entries for @letter</div>
+        }
+    }
+}

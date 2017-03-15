@@ -1,0 +1,27 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "Design.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-8">
+        <div id="bodyContent" class="core-content">
+            @RenderBody()
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        @if (IsSectionDefined("FullSideNav"))
+        {
+            @RenderSection("FullSideNav", required: false)
+        }
+        else
+        {
+            @Html.Partial("Nav/PageNav")
+
+            @Html.Partial("Page/ListContactDetails")
+
+            @RenderSection("SideNav", required: false)
+        }
+    </div>
+</div>

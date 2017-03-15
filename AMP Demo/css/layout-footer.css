@@ -1,0 +1,33 @@
+﻿footer { 
+    background-color: #444;
+    padding: 2em 0;
+    font-size: 75%;
+    color: #eee;
+}
+
+
+footer a {
+    font-size: 110%;
+    color: #ddd;
+}
+
+footer a:hover, footer a:focus {
+    color: #fff;
+}
+
+.footer-links {
+    margin-bottom: 2em;
+}
+
+.footer-links li {
+    padding: 0 0.3em;
+}
+
+
+.site-credit {
+    color: #ddd;
+}
+.jumoo {
+    font-family:Pacifico;
+    margin-left: -5px;
+}

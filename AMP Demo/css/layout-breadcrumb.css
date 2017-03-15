@@ -1,0 +1,14 @@
+﻿.breadcrumb {
+    background-color: transparent;
+    padding-left: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.breadcrumb>li+li:before {
+    content:'>';
+}
+
+.breadcrumb .active {
+    color: #767676;
+}

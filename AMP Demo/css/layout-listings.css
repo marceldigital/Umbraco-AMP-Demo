@@ -1,0 +1,47 @@
+﻿.item-listing {
+
+}
+
+.listing-item {
+    border-left: 4px solid #ddd;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    margin-bottom: 0.5em;
+}
+
+
+.listing-item .listing-header {
+    font-size: 0.7em;
+    padding-bottom: 1em;
+}
+
+.listing-item .listing-header h3 {
+    margin-bottom:0;   
+} 
+
+.listing-item .listing-body {
+
+}
+
+.listing-item .listing-footer {
+    text-align: right;
+}
+
+
+.listing-item .listing-footer a {
+    padding: 0.2em;
+    text-decoration: none;
+}
+
+
+.listing-item .listing-footer a:hover {
+    color: #222;
+    background-color: #eee;
+}
+
+.listing-item-title .listing-date {
+    display: block;
+    margin: -1em 0 1em;
+    padding: 0;
+    color: #767676;
+}

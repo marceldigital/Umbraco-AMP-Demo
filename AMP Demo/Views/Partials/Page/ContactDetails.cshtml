@@ -1,0 +1,39 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{ 
+    // display all the contact details.
+
+    // this page hand rolls the contact form
+    // you might want to insert your favorite
+    // form based thing here
+}
+@DisplayContactForm("Email", "emailAddress")
+@DisplayContactMethod("Telephone", "telephoneNumber")
+@DisplayContactMethod("Address", "address")
+
+@helper DisplayContactMethod(string title, string property)
+{
+    if (Model.Content.HasValue(property))
+    {
+        var displayTitle = Umbraco.GetDictionaryValue("Contact." + title);
+        if (string.IsNullOrEmpty(displayTitle))
+        {
+            displayTitle = title;
+        }
+
+        var detail = Umbraco.ReplaceLineBreaksForHtml(Model.Content.GetPropertyValue<string>(property));
+
+        <div class="contact-item" id="@title">
+            <h3>@displayTitle</h3>
+            @Html.Raw(detail)
+        </div>
+    }
+}
+
+@helper DisplayContactForm(string title, string emailProperty)
+{
+    var emailAddress = Model.Content.GetPropertyValue<string>(emailProperty);
+    @Html.Partial("Page/ContactForm", new LGStarterKit.Contact.ContactViewModel()
+                    {
+                        ToAddress = emailAddress
+                    })
+}z

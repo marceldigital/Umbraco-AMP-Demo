@@ -1,0 +1,43 @@
+﻿
+body {
+    font-family: 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12pt;
+    background-color: #fefefe;
+}
+
+a { text-decoration: none; }
+
+.btn a { text-decoration: none; }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ubuntu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    /* color: #BF360C; */
+}
+
+h2, h3 {
+    padding-bottom: 0.2em;
+}
+
+strong {
+    font-weight: 700;
+}
+
+/* de roundify */
+.container .jumbotron,
+.alert,
+.well,
+.form-control,
+.btn,
+.breadbrumb,
+.nav-pills>li>a,
+.navbar-toggle
+{
+    border-radius: 0;
+}
+
+.cookie-notice {
+    font-size: 89%;
+    padding: 0.5em;
+}
+
