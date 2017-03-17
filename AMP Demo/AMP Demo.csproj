@@ -297,6 +297,7 @@
     <Content Include="config\404handlers.config" />
     <Content Include="Views\Shared\_LayoutAmp.cshtml" />
     <Content Include="Views\Amp\_ViewStart.cshtml" />
+    <Content Include="Views\Amp.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -332,6 +333,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\Bootstrapper.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
