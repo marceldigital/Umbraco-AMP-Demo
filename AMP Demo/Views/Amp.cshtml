@@ -1,7 +1,6 @@
 ﻿@inherits UmbracoTemplatePage
-@*
-    Redirects back to the canonical version
-*@
+
 @{
-    Response.Redirect(Model.Content.Url);
+    Layout = "~/Views/Shared/_LayoutAmp.cshtml";
 }
+<h1>Hello World</h1>

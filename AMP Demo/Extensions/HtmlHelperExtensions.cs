@@ -3,7 +3,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 
-namespace MarcelDigital.OutingBlog.Web.Helpers
+namespace UWestFest.Demo.Helpers
 {
     public static class HtmlHelperExtensions
     {

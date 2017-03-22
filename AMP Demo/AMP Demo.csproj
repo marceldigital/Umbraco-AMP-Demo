@@ -266,7 +266,9 @@
     <Content Include="config\imageprocessor\processing.config" />
     <Content Include="config\imageprocessor\cache.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
@@ -298,6 +300,8 @@
     <Content Include="Views\Shared\_LayoutAmp.cshtml" />
     <Content Include="Views\Amp\_ViewStart.cshtml" />
     <Content Include="Views\Amp.cshtml" />
+    <Content Include="Views\Amp\NewsItem.cshtml" />
+    <Content Include="Views\DatedItemPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

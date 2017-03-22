@@ -1,8 +1,10 @@
-﻿using MarcelDigital.Umbraco.Amp.Controllers;
+﻿using MarcelDigital.OutingBlog.Web;
+using MarcelDigital.Umbraco.Amp.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Optimization;
 using Umbraco.Core;
 using Umbraco.Web.Mvc;
 
@@ -22,7 +24,9 @@ namespace AmpTest
 
         public void OnApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
-            //DefaultRenderMvcControllerResolver.Current.SetDefaultControllerType(typeof(RenderAmpMvcController));
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            DefaultRenderMvcControllerResolver.Current.SetDefaultControllerType(typeof(RenderAmpMvcController));
         }
     }
 }

@@ -1,0 +1,54 @@
+﻿
+@inherits UmbracoTemplatePage
+<div class="listing-item-title">
+    <h2>@Umbraco.Field("title")</h2>
+    @Html.Partial("Page/DisplayItemDateRange")
+    <amp-img src="@Model.Content.GetCropUrl("image", "Full")"
+             width="750"
+             height="300"
+             layout="responsive">
+    </amp-img>
+</div>
+
+@CurrentPage.GetGridHtml("content", "lgsk-nested-bootstrap")
+
+@section InlineCss {
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Ubuntu:400,700|Pacifico&amp;cdv=1449217408" type="text/css" rel="stylesheet" />
+    <style amp-custom>@Html.RawBundleContent("~/inline-bundle/css")</style>
+}
+
+@section Schema {
+    <script type="application/ld+json">
+        {
+        "@@context": "http://schema.org",
+        "@@type": "NewsArticle",
+        "headline": "@Model.Content.Name",
+        "datePublished": "@(Model.Content.CreateDate.ToString("s"))",
+        "dateModified": "@(Model.Content.UpdateDate.ToString("s"))",
+        "author": {
+        "@@type": "Person",
+        "name": "@Model.Content.CreatorName"
+        },
+        "mainEntityOfPage": {
+        "@@type": "WebPage",
+        "@@id": "@Umbraco.NiceUrlWithDomain(Model.Content.Id)"
+        },
+        "publisher": {
+        "@@type": "Organization",
+        "name": "Marcel Digital",
+        "logo": {
+        "@@type": "ImageObject",
+        "url": "https://outings.marceldigital.com/Content/logo-alt.png",
+        "width": 144,
+        "height": 60
+        }
+        },
+        "image": {
+        "@@type": "ImageObject",
+        "url": "https://outings.marceldigital.com/media/1004/team-archery.jpg?anchor=center&amp;mode=crop&amp;width=1024&amp;height=768&amp;rnd=131311513570000000",
+        "height": 1024,
+        "width": 768
+        }
+        }
+    </script>
+}

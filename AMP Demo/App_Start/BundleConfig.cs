@@ -6,9 +6,10 @@ namespace MarcelDigital.OutingBlog.Web
     {
         public static void RegisterBundles(BundleCollection bundles) {
             bundles.Add(new StyleBundle("~/inline-bundle/css")
-                .Include("~/Content/foundation.grid.css",
-                         "~/Content/branding.css",
-                         "~/Content/amp.css"));
+                .Include("~/css/layout-core.css",
+                         "~/css/layout-nav.css",
+                         "~/css/layout-listings.css",
+                         "~/css/layout-page.css"));
         }
     }
 }
